@@ -1,0 +1,11 @@
+
+
+1. 在加载angular框架的前提下加载angular-md5.js文件
+  <script src="js/angular-md5/angular-md5.js"></script>
+2. 依赖注入
+  var myapp = angular.module("myapp", ["angular-md5"];
+3. 控制器中加载服务
+  myapp.controller("myCtrl", function($scope, md5) {
+    // 加密的密码
+    $scope.password = md5.createHash($scope.password);
+  }
